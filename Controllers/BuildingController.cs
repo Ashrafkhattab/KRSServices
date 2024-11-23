@@ -33,18 +33,17 @@ namespace KRSServices.Controllers
 
             var Building = _UOW.buildingRepository.GetAllBuildings(param);
 
-            var metaData = new
-            {
-                Building.TotalCount,
-                Building.PageSize,
-                Building.CurrentPage,
-                Building.TotalPages,
-                Building.HasNext,
-                Building.HasPrevious,
-            };
-            Response.Headers.Add("Pagination", JsonConvert.SerializeObject(metaData));
+            //var metaData = new
+            //{
+            //    Building.TotalCount,
+            //    Building.PageSize,
+            //    Building.CurrentPage,
+            //    Building.TotalPages,
+            //    Building.HasNext,
+            //    Building.HasPrevious,
+            //};
+            //Response.Headers.Add("Pagination", JsonConvert.SerializeObject(metaData));
             return Ok(Building);
-            //return Ok(new Pagination<BookUpdateDTO>(specparam.PageIndex, specparam.Pagesize, data, count));
         }
 
 
