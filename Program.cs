@@ -84,7 +84,7 @@ namespace KRSServices
             });
             builder.Services.AddCors(corsoption => corsoption.AddPolicy("MyPolicy",
                 corsPolicyBuilder => corsPolicyBuilder.AllowAnyMethod()
-                .AllowAnyHeader().AllowAnyOrigin()));
+                .AllowAnyHeader().AllowAnyOrigin().AllowCredentials().WithExposedHeaders("Pagination")));
             var app = builder.Build();
             app.UseCors("MyPolicy");
             app.UseRouting();
